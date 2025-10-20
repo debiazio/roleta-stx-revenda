@@ -1,0 +1,332 @@
+/* Esconde a mensagem de desktop por padrão */
+.desktop-message {
+    display: none;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.regras,
+.textos-roleta {
+    color: #fff;
+    text-align: center;
+}
+
+.textos-roleta h1 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.textos-roleta .subtitulo {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+
+.tela1,
+.tela2,
+.tela3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-logo-roleta {
+    margin-top: 38px;
+}
+
+
+/* FORMULARIO  */
+.formulario {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: -webkit-fill-available;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s;
+    margin-bottom: 6px;
+    border: 1px solid #FDC00C;
+}
+
+input:focus {
+    border-color: #FDC00C;
+}
+
+
+.erro {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* ===== CHECKBOX ===== */
+.campo-checkbox label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.campo-checkbox {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 10px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Remove o checkbox padrão */
+.campo-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+/* Cria um quadrado personalizado */
+.campo-checkbox .checkmark {
+    width: 22px;
+    height: 22px;
+    background-color: #000;
+    /* fundo padrão quando não marcado */
+    border: 2px solid #d6a74a;
+    /* borda dourada */
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Fundo amarelo quando marcado */
+.campo-checkbox input[type="checkbox"]:checked+.checkmark {
+    background-color: #FDC00C;
+}
+
+/* Ícone de check (quando marcado) */
+.campo-checkbox input[type="checkbox"]:checked+.checkmark::after {
+    content: "✔";
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    top: 1px;
+    left: 4px;
+}
+
+/* Efeito hover */
+.campo-checkbox label:hover .checkmark {
+    background-color: #1a1a1a;
+    /* fundo escuro quando hover, não marcado */
+}
+
+
+/* ===== BOTÃO ENVIAR ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #d6a74a;
+    color: #fff;
+    font-weight: 900;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    margin-top: 17px;
+}
+
+button:hover {
+    background-color: #b5893d;
+}
+
+/* FORMULARIO  */
+
+
+.img-roleta {
+    margin-top: 37px;
+    margin-bottom: 32px;
+}
+
+.tabela-premios {
+    margin-bottom: 37px;
+}
+
+.regras {
+    margin: 0 39px;
+    padding-bottom: 65px;
+}
+
+.titulo-regras {
+    font-weight: 500;
+    color: #FFFFFFB2;
+    font-size: 12px;
+}
+
+.itens-regras {
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0;
+}
+
+
+/* tela 2  */
+.titulo-chegou-hora p {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FDC00C;
+    text-align: center;
+    font-size: 22px;
+}
+
+.botao-girar {
+    width: 90%;
+    padding-bottom: 65px;
+}
+/* roleta  */
+  .wheel-container {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .img-roleta img {
+    width: 300px;
+    height: 300px;
+    transition: transform 3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+
+  #spinButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
+  .seletor{
+    width: 83px;
+    height: 100px;
+    position: relative;
+    top: -323px;
+  }
+/* roleta  */
+
+/* teste vibracao seletor  */
+@keyframes vibrarSeletor {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+  75% { transform: rotate(-2.5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.seletor.vibrando {
+  animation: vibrarSeletor 0.1s infinite linear;
+}
+
+/* tela 2  */
+
+/* tela 3  */
+.infos-cupom-final {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.titulo-cupom-final {
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #FDC00C;
+}
+
+.codigo-sorteado {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: #FDC00C;
+    text-decoration: underline;
+}
+
+.textos-cupom {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: #FFFFFF1A;
+    padding: 0 20px 20px;
+    border-radius: 25px;
+}
+
+.compra-site {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.compra-site a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #AD8921;
+    border-radius: 25px;
+    padding: 0 20px;
+}
+
+.compra-site img{
+    margin-left: 15px;
+}
+
+/* tela 3  */
+
+.txt-imgs-ilustrativas{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Quando for desktop ou tablet, esconde o conteúdo e mostra a mensagem */
+@media (min-width: 768px) {
+    #main-content {
+        display: none;
+    }
+
+    .desktop-message {
+        display: block;
+    }
+}
