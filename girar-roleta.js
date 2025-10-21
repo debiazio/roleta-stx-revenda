@@ -32,61 +32,86 @@ document.addEventListener("DOMContentLoaded", () => {
   spinButton.addEventListener("click", () => {
     if (spinning) return;
     spinning = true;
-
-    // 🔒 Desativa o botão (visualmente cinza)
+  
     spinButton.disabled = true;
     spinButton.style.backgroundColor = "#ccc";
     spinButton.style.color = "#666";
     spinButton.style.cursor = "not-allowed";
-
+  
     tela1.style.display = "none";
     tela2.style.display = "flex";
     tela3.style.display = "none";
-
+  
     wheel.classList.add("girando");
     seletor.classList.add("vibrando");
-
-    const prizeIndex = Math.floor(Math.random() * prizes.length);
+  
+    // --- PROBABILIDADES DINÂMICAS ---
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1; // Janeiro = 0
+  
+    let probabilities;
+  
+    if (month === 11 && day >= 10 && day <= 13) {
+      probabilities = [0.67, 0.22, 0.11, 0]; // 1%, 2%, 3%, Seladora
+    } else if (month === 11 && day >= 14 && day <= 15) {
+      probabilities = [0.67, 0.22, 0.11, 0];
+    } else if (month === 11 && day >= 16 && day <= 30) {
+      probabilities = [0.67, 0.22, 0.11, 0.11];
+    } else {
+      probabilities = [0.25, 0.25, 0.25, 0.25]; // padrão fora das datas
+    }
+  
+    // --- SORTEIO PONDERADO ---
+    const rand = Math.random();
+    let cumulative = 0;
+    let prizeIndex = 0;
+  
+    for (let i = 0; i < probabilities.length; i++) {
+      cumulative += probabilities[i];
+      if (rand <= cumulative) {
+        prizeIndex = i;
+        break;
+      }
+    }
+  
     const prize = prizes[prizeIndex];
-
+  
     const extraSpins = 5;
     const prizeAngle = prize.angle % 360;
     const targetAngleRelative = (360 - prizeAngle) % 360;
     const normalizedCurrent = totalRotation % 360;
-
+  
     let delta = extraSpins * 360 + targetAngleRelative - normalizedCurrent;
     delta = ((delta % 360) + 360) % 360 + extraSpins * 360;
-
+  
     totalRotation += delta;
-
+  
     wheelImg.style.transition = `transform ${spinDuration}ms ${spinTiming}`;
     wheelImg.style.transform = `rotate(${totalRotation}deg)`;
-
-    // Quando o giro terminar
+  
     setTimeout(() => {
       spinning = false;
       wheel.classList.remove("girando");
       seletor.classList.remove("vibrando");
-
-      // Mostra mensagem animada de prêmio 🎉
+  
       prizeMessage.innerHTML = `<p>Parabéns, você ganhou o cupom de ${prize.nome}!</p>`;
       prizeMessage.classList.add("show");
-
-      // Depois de 4 segundos, vai para a tela 3
+  
       setTimeout(() => {
         tela2.style.display = "none";
         tela3.style.display = "flex";
         codigoSorteado.textContent = prize.cupom;
         prizeMessage.classList.remove("show");
       }, 4000);
-
+  
       const normalizedFinal = totalRotation % 360;
       wheelImg.style.transition = "none";
       wheelImg.style.transform = `rotate(${normalizedFinal}deg)`;
       totalRotation = normalizedFinal;
     }, spinDuration + 100);
   });
-
+  
   // --- BOTÃO WHATSAPP COM CUPOM NA MENSAGEM ---
   const linkWhatsapp = document.getElementById("whatsapp");
   if (linkWhatsapp && codigoSorteado) {

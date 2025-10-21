@@ -48,6 +48,10 @@ body {
     margin-top: 38px;
 }
 
+.tabela-premios img,
+.main-logo-roleta img{
+    max-width: 300px;
+}
 
 /* FORMULARIO  */
 .formulario {
@@ -120,6 +124,10 @@ input:focus {
     position: relative;
     margin-right: 10px;
     cursor: pointer;
+}
+
+.campo-checkbox  a{
+    color: #fff;
 }
 
 /* Fundo amarelo quando marcado */
