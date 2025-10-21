@@ -311,6 +311,7 @@ button:hover {
     margin-left: 15px;
 }
 
+
 /* tela 3  */
 
 .txt-imgs-ilustrativas{
@@ -320,6 +321,33 @@ button:hover {
     text-align: center;
 }
 
+
+/* Mensagem começa atrás da roleta */
+#prizeMessage {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 100%); /* começa abaixo do centro */
+    opacity: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FDC00C;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 1.2s ease, opacity 1.2s ease;
+    z-index: 1; /* atrás da roleta inicialmente */
+    pointer-events: none;
+    text-align: center;
+    background-color: #b5893d;
+    border-radius: 25px;
+    padding: 10px;
+  }
+  
+  /* Quando a animação é ativada */
+  #prizeMessage.show {
+    opacity: 1;
+    transform: translate(-50%, -120%); /* sobe acima da roleta */
+    z-index: 3; /* vem pra frente */
+  }
 /* Quando for desktop ou tablet, esconde o conteúdo e mostra a mensagem */
 @media (min-width: 768px) {
     #main-content {

@@ -1,190 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roleta STX Revenda</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="estilo.css" />
-  </head>
-  <body>
-    <header class="desktop-message">
-      <p>Página disponível somente em smartphones</p>
-    </header>
 
-    <main id="main-content">
-      <section class="tela1">
-        <div class="main-logo-roleta">
-          <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roleta STX Revenda</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+  <header class="desktop-message">
+    <p>Página disponível somente em smartphones</p>
+  </header>
+
+  <main id="main-content">
+    <!-- INICIO TELA 1  -->
+    <section class="tela1">
+      <!-- LOGO BLACK NOVEMBER STERMAX -->
+      <div class="main-logo-roleta">
+        <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
+      </div>
+
+      <div class="textos-roleta">
+        <h1>roleta de prêmios</h1>
+        <p class="subtitulo">
+          Preencha seus dados para girar a roleta de prêmios
+        </p>
+      </div>
+      <!-- FORMULARIO  -->
+      <div class="formulario">
+        <form id="formRoleta" onsubmit="return validarFormulario(event)" novalidate>
+          <input type="text" id="nome" name="nome" placeholder="Insira seu nome" required />
+
+          <input type="email" id="email" name="email" placeholder="Insira seu email" required />
+
+          <input type="tel" id="telefone" name="telefone" placeholder="Insira seu telefone" maxlength="15" required />
+          <div class="campo-checkbox">
+            <label>
+              <input type="checkbox" id="comunicacoes" />
+              <span class="checkmark"></span>
+              Eu concordo em receber comunicações.
+            </label>
+          </div>
+
+          <div class="campo-checkbox">
+            <label>
+              <input type="checkbox" id="privacidade" />
+              <span class="checkmark"></span>
+              Li e aceito os termos de política de privacidade.
+            </label>
+          </div>
+
+          <button type="submit">ENVIAR</button>
+        </form>
+      </div>
+
+      <div class="img-roleta">
+        <img src="/imgs/roleta-img.png" alt="" />
+      </div>
+
+      <div class="tabela-premios">
+        <img src="/imgs/tabela.png" alt="" />
+      </div>
+
+      <div class="regras">
+        <p class="titulo-regras">Regras da Roleta de Prêmios</p>
+        <p class="itens-regras">*Válido para compras acima de R$ 390,00</p>
+        <p class="itens-regras">
+          *Válido apenas um prêmio por CPF Estoque de prêmios limitado,
+          sujeito à disponibilidade no momento da compra.
+        </p>
+        <p class="itens-regras">
+          *Imagens dos prêmios meramente ilustrativas
+        </p>
+      </div>
+    </section>
+    <!-- FIM TELA 1  -->
+    <!-- SEGUNDA TELA  -->
+    <section class="tela2">
+      <!-- LOGO BLACK NOVEMBER STERMAX -->
+      <div class="main-logo-roleta">
+        <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
+      </div>
+      <div class="textos-roleta">
+        <h1>roleta de prêmios</h1>
+        <p class="subtitulo">Agradecemos o seu Cadastro!</p>
+      </div>
+      <div class="titulo-chegou-hora">
+        <p>
+          Chegou a hora de<br />
+          testar sua sorte
+        </p>
+      </div>
+
+      <!-- roda da roleta  -->
+      <div class="wheel-container">
+        <div class="img-roleta" id="wheel">
+          <img src="/imgs/Roleta-Stermax.png" alt="Roleta" />
         </div>
+        <button id="spinButton">Girar a Roleta</button>
+      </div>
+      <div id="prizeMessage">
+        <p>Parabéns, você ganhou o cupom<br> XXXX!</p>
+      </div>
+      <!-- SELETOR CENTRAL DO PREMIO  -->
+      <img src="/imgs/seletor.png" alt="" class="seletor">
+      <!-- roda da roleta  -->
 
-        <div class="textos-roleta">
-          <h1>roleta de prêmios</h1>
-          <p class="subtitulo">
-            Preencha seus dados para girar a roleta de prêmios
-          </p>
-        </div>
-
-        <div class="formulario">
-          <form
-            id="formRoleta"
-            onsubmit="return validarFormulario(event)"
-            novalidate
-          >
-            <input
-              type="text"
-              id="nome"
-              name="nome"
-              placeholder="Insira seu nome"
-              required
-            />
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Insira seu email"
-              required
-            />
-
-            <input
-              type="tel"
-              id="telefone"
-              name="telefone"
-              placeholder="Insira seu telefone"
-              maxlength="15"
-              required
-            />
-            <div class="campo-checkbox">
-              <label>
-                <input type="checkbox" id="comunicacoes" />
-                <span class="checkmark"></span>
-                Eu concordo em receber comunicações.
-              </label>
-            </div>
-
-            <div class="campo-checkbox">
-              <label>
-                <input type="checkbox" id="privacidade" />
-                <span class="checkmark"></span>
-                Li e aceito os termos de política de privacidade.
-              </label>
-            </div>
-
-            <button type="submit">ENVIAR</button>
-          </form>
-        </div>
-
-        <div class="img-roleta">
-          <img src="/imgs/roleta-img.png" alt="" />
-        </div>
-
-        <div class="tabela-premios">
-          <img src="/imgs/tabela.png" alt="" />
-        </div>
-
-        <div class="regras">
-          <p class="titulo-regras">Regras da Roleta de Prêmios</p>
-          <p class="itens-regras">*Válido para compras acima de R$ 390,00</p>
-          <p class="itens-regras">
-            *Válido apenas um prêmio por CPF Estoque de prêmios limitado,
-            sujeito à disponibilidade no momento da compra.
-          </p>
-          <p class="itens-regras">
-            *Imagens dos prêmios meramente ilustrativas
-          </p>
-        </div>
-      </section>
-      <!-- SEGUNDA TELA  -->
-      <section class="tela2">
-        <div class="main-logo-roleta">
-          <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
-        </div>
-        <div class="textos-roleta">
-          <h1>roleta de prêmios</h1>
-          <p class="subtitulo">Agradecemos o seu Cadastro!</p>
-        </div>
-        <div class="titulo-chegou-hora">
+    </section>
+    <!-- FIM SEGUNDA TELA  -->
+    <!-- INICIO TERCEIRA TELA  -->
+    <section class="tela3">
+      <div class="main-logo-roleta">
+        <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
+      </div>
+      <div class="textos-roleta">
+        <h1>roleta de prêmios</h1>
+        <p class="subtitulo">Parabéns! Agora é com você:</p>
+      </div>
+      <div class="textos-cupom">
+        <p class="titulo-cupom-final">Copie o seu cupom:</p>
+        <p class="codigo-sorteado">CODIGOCUPOM</p>
+        <li class="infos-cupom-final">
+          Informe o código do cupom sorteado via Whatsapp.
+        </li>
+        <li class="infos-cupom-final">
+          Ou faça a compra diretamente aqui no site.
+        </li>
+        <li class="infos-cupom-final">
+          Preencha todos os dados para a compra, e o campo do cupom aparecerá
+          na última etapa antes do pagamento. Lembre-se de digitar em letras
+          maiúsculas.
+        </li>
+      </div>
+      <div class="compra-site">
+        <!-- BOTAO DIRECIONA SITE  -->
+        <a href="https://stermax.com.br">
           <p>
-            Chegou a hora de<br />
-            testar sua sorte
+            comprar pelo site e<br />
+            garantir o meu prêmio
           </p>
-        </div>
-        <!-- roda da roleta  -->
-        <div class="wheel-container">
-          <div class="img-roleta" id="wheel">
-              <img src="/imgs/Roleta-Stermax.png" alt="Roleta" />
-            </div>
-            <button id="spinButton">Girar a Roleta</button>
-        </div>
-        <img src="/imgs/seletor.png" alt="" class="seletor">
-               <!-- roda da roleta  -->
-        <div id="prizeMessage"></div>
-      </section>
-      <section class="tela3">
-        <div class="main-logo-roleta">
-          <img src="/imgs/blacknovember 3.png" alt="logo roleta" />
-        </div>
-        <div class="textos-roleta">
-          <h1>roleta de prêmios</h1>
-          <p class="subtitulo">Parabéns! Agora é com você:</p>
-        </div>
-        <div class="textos-cupom">
-          <p class="titulo-cupom-final">Copie o seu cupom:</p>
-          <p class="codigo-sorteado">CODIGOCUPOM</p>
-          <li class="infos-cupom-final">
-            Informe o código do cupom sorteado via Whatsapp.
-          </li>
-          <li class="infos-cupom-final">
-            Ou faça a compra diretamente aqui no site.
-          </li>
-          <li class="infos-cupom-final">
-            Preencha todos os dados para a compra, e o campo do cupom aparecerá
-            na última etapa antes do pagamento. Lembre-se de digitar em letras
-            maiúsculas.
-          </li>
-        </div>
-        <div class="compra-site">
-          <a href="https://stermax.com.br"
-            ><p>
-              comprar pelo site e<br />
-              garantir o meu prêmio
-            </p>
-            <img src="/imgs/sacola-icon.png" alt="sacola" />
-          </a>
-          <a id="whatsapp" href="https://wa.me/5541999710062">
-            <p>
-              comprar com consultor e<br />
-              garantir o meu prêmio
-            </p>
-            <img src="/imgs/whatsapp-icon.png" alt="Whatsapp" />
-          </a>
-          <p class="txt-imgs-ilustrativas">
-            *imagens dos prêmios meramente ilustrativas
+          <img src="/imgs/sacola-icon.png" alt="sacola" />
+        </a>
+        <!-- BOTAO DIRECIONA WHATSAPP  -->
+        <a id="whatsapp" href="https://wa.me/5541999710062">
+          <p>
+            comprar com consultor e<br />
+            garantir o meu prêmio
           </p>
-        </div>
+          <img src="/imgs/whatsapp-icon.png" alt="Whatsapp" />
+        </a>
+        <p class="txt-imgs-ilustrativas">
+          *imagens dos prêmios meramente ilustrativas
+        </p>
+      </div>
 
-        <div class="img-roleta">
-          <img src="/imgs/roleta-img.png" alt="" />
-        </div>
-        <div class="regras">
-          <p class="itens-regras">
-            Cupom válido para compras acima de R$ 390,00
-          </p>
-          <p class="itens-regras">Válido apenas um prêmio por CPF.</p>
-          <p class="itens-regras">
-            Estoque de prêmios limitado, sujeito à disponibilidade no momento da
-            compra
-          </p>
-        </div>
-      </section>
-    </main>
-    
-    <script src="girar-roleta.js"></script>
-    <script src="valida-form.js"></script>
-  </body>
+      <div class="img-roleta">
+        <img src="/imgs/roleta-img.png" alt="" />
+      </div>
+      <div class="regras">
+        <p class="itens-regras">
+          Cupom válido para compras acima de R$ 390,00
+        </p>
+        <p class="itens-regras">Válido apenas um prêmio por CPF.</p>
+        <p class="itens-regras">
+          Estoque de prêmios limitado, sujeito à disponibilidade no momento da
+          compra
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="girar-roleta.js"></script>
+  <script src="valida-form.js"></script>
+</body>
+
 </html>
