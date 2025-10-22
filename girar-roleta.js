@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (month === 11 && day >= 16 && day <= 30) {
       probabilities = [0.67, 0.22, 0.11, 0.11];
     } else {
-      probabilities = [0.25, 0.25, 0.25, 0.25]; // padrão fora das datas
+      probabilities = [1]; // padrão fora das datas
     }
   
     // --- SORTEIO PONDERADO ---
